@@ -1,17 +1,17 @@
 [
     {
         "name": "composer/installers",
-        "version": "v1.3.0",
-        "version_normalized": "1.3.0.0",
+        "version": "v1.4.0",
+        "version_normalized": "1.4.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/composer/installers.git",
-            "reference": "79ad876c7498c0bbfe7eed065b8651c93bfd6045"
+            "reference": "9ce17fb70e9a38dd8acff0636a29f5cf4d575c1b"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/composer/installers/zipball/79ad876c7498c0bbfe7eed065b8651c93bfd6045",
-            "reference": "79ad876c7498c0bbfe7eed065b8651c93bfd6045",
+            "url": "https://api.github.com/repos/composer/installers/zipball/9ce17fb70e9a38dd8acff0636a29f5cf4d575c1b",
+            "reference": "9ce17fb70e9a38dd8acff0636a29f5cf4d575c1b",
             "shasum": ""
         },
         "require": {
@@ -25,7 +25,7 @@
             "composer/composer": "1.0.*@dev",
             "phpunit/phpunit": "4.1.*"
         },
-        "time": "2017-04-24T06:37:16+00:00",
+        "time": "2017-08-09T07:53:48+00:00",
         "type": "composer-plugin",
         "extra": {
             "class": "Composer\\Installers\\Plugin",
@@ -59,6 +59,7 @@
             "Hurad",
             "ImageCMS",
             "Kanboard",
+            "Lan Management System",
             "MODX Evo",
             "Mautic",
             "Maya",
@@ -82,6 +83,7 @@
             "croogo",
             "dokuwiki",
             "drupal",
+            "eZ Platform",
             "elgg",
             "expressionengine",
             "fuelphp",
@@ -98,6 +100,7 @@
             "mediawiki",
             "modulework",
             "moodle",
+            "osclass",
             "phpbb",
             "piwik",
             "ppi",
@@ -150,6 +153,57 @@
                 "name": "Pressbooks (Book Oven Inc.)",
                 "email": "code@pressbooks.com"
             }
+        ]
+    },
+    {
+        "name": "soberwp/intervention",
+        "version": "1.2.0-p",
+        "version_normalized": "1.2.0.0-patch",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/soberwp/intervention.git",
+            "reference": "1698e51efe696c5867fb78ef7c5d2efff9b79260"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/soberwp/intervention/zipball/1698e51efe696c5867fb78ef7c5d2efff9b79260",
+            "reference": "1698e51efe696c5867fb78ef7c5d2efff9b79260",
+            "shasum": ""
+        },
+        "require": {
+            "composer/installers": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "squizlabs/php_codesniffer": "2.*"
+        },
+        "time": "2017-08-26T12:21:27+00:00",
+        "type": "package",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Sober\\Intervention\\": "src/",
+                "Sober\\Intervention\\Module\\": "src/modules/"
+            },
+            "files": [
+                "intervention.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Darren Jacoby",
+                "email": "darren@jacoby.co.za",
+                "homepage": "https://twitter.com/withjacoby"
+            }
+        ],
+        "description": "WordPress plugin containing modules to cleanup and customize wp-admin.",
+        "homepage": "https://github.com/soberwp",
+        "keywords": [
+            "wordpress"
         ]
     }
 ]

@@ -4,9 +4,18 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitabdf7edbed11382bd9e996de46de03e4
+class ComposerStaticInit399ec3ff124b77248666d683de790f57
 {
+    public static $files = array (
+        'f61431ae35714ebe66a223a5c374b5e5' => __DIR__ . '/..' . '/soberwp/intervention/intervention.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
+        'S' => 
+        array (
+            'Sober\\Intervention\\Module\\' => 26,
+            'Sober\\Intervention\\' => 19,
+        ),
         'P' => 
         array (
             'PressbooksMix\\' => 14,
@@ -18,6 +27,14 @@ class ComposerStaticInitabdf7edbed11382bd9e996de46de03e4
     );
 
     public static $prefixDirsPsr4 = array (
+        'Sober\\Intervention\\Module\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/soberwp/intervention/src/modules',
+        ),
+        'Sober\\Intervention\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/soberwp/intervention/src',
+        ),
         'PressbooksMix\\' => 
         array (
             0 => __DIR__ . '/..' . '/pressbooks/mix/inc',
@@ -52,6 +69,7 @@ class ComposerStaticInitabdf7edbed11382bd9e996de46de03e4
         'Composer\\Installers\\ElggInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/ElggInstaller.php',
         'Composer\\Installers\\EliasisInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/EliasisInstaller.php',
         'Composer\\Installers\\ExpressionEngineInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/ExpressionEngineInstaller.php',
+        'Composer\\Installers\\EzPlatformInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/EzPlatformInstaller.php',
         'Composer\\Installers\\FuelInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/FuelInstaller.php',
         'Composer\\Installers\\FuelphpInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/FuelphpInstaller.php',
         'Composer\\Installers\\GravInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/GravInstaller.php',
@@ -64,6 +82,7 @@ class ComposerStaticInitabdf7edbed11382bd9e996de46de03e4
         'Composer\\Installers\\KirbyInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/KirbyInstaller.php',
         'Composer\\Installers\\KodiCMSInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/KodiCMSInstaller.php',
         'Composer\\Installers\\KohanaInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/KohanaInstaller.php',
+        'Composer\\Installers\\LanManagementSystemInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/LanManagementSystemInstaller.php',
         'Composer\\Installers\\LaravelInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/LaravelInstaller.php',
         'Composer\\Installers\\LavaLiteInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/LavaLiteInstaller.php',
         'Composer\\Installers\\LithiumInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/LithiumInstaller.php',
@@ -78,6 +97,7 @@ class ComposerStaticInitabdf7edbed11382bd9e996de46de03e4
         'Composer\\Installers\\MoodleInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/MoodleInstaller.php',
         'Composer\\Installers\\OctoberInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/OctoberInstaller.php',
         'Composer\\Installers\\OntoWikiInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/OntoWikiInstaller.php',
+        'Composer\\Installers\\OsclassInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/OsclassInstaller.php',
         'Composer\\Installers\\OxidInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/OxidInstaller.php',
         'Composer\\Installers\\PPIInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/PPIInstaller.php',
         'Composer\\Installers\\PhiftyInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/PhiftyInstaller.php',
@@ -102,6 +122,7 @@ class ComposerStaticInitabdf7edbed11382bd9e996de46de03e4
         'Composer\\Installers\\TYPO3FlowInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/TYPO3FlowInstaller.php',
         'Composer\\Installers\\TheliaInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/TheliaInstaller.php',
         'Composer\\Installers\\TuskInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/TuskInstaller.php',
+        'Composer\\Installers\\UserFrostingInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/UserFrostingInstaller.php',
         'Composer\\Installers\\VanillaInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/VanillaInstaller.php',
         'Composer\\Installers\\VgmcpInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/VgmcpInstaller.php',
         'Composer\\Installers\\WHMCSInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/WHMCSInstaller.php',
@@ -111,14 +132,42 @@ class ComposerStaticInitabdf7edbed11382bd9e996de46de03e4
         'Composer\\Installers\\ZendInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/ZendInstaller.php',
         'Composer\\Installers\\ZikulaInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/ZikulaInstaller.php',
         'PressbooksMix\\Assets' => __DIR__ . '/..' . '/pressbooks/mix/inc/Assets.php',
+        'Sober\\Intervention\\Instance' => __DIR__ . '/..' . '/soberwp/intervention/src/Instance.php',
+        'Sober\\Intervention\\Labels' => __DIR__ . '/..' . '/soberwp/intervention/src/Labels.php',
+        'Sober\\Intervention\\Module\\AddAcfPage' => __DIR__ . '/..' . '/soberwp/intervention/src/Module/AddAcfPage.php',
+        'Sober\\Intervention\\Module\\AddDashboardItem' => __DIR__ . '/..' . '/soberwp/intervention/src/Module/AddDashboardItem.php',
+        'Sober\\Intervention\\Module\\AddDashboardRedirect' => __DIR__ . '/..' . '/soberwp/intervention/src/Module/AddDashboardRedirect.php',
+        'Sober\\Intervention\\Module\\AddMenuPage' => __DIR__ . '/..' . '/soberwp/intervention/src/Module/AddMenuPage.php',
+        'Sober\\Intervention\\Module\\AddSvgSupport' => __DIR__ . '/..' . '/soberwp/intervention/src/Module/AddSvgSupport.php',
+        'Sober\\Intervention\\Module\\RemoveCustomizerItems' => __DIR__ . '/..' . '/soberwp/intervention/src/Module/RemoveCustomizerItems.php',
+        'Sober\\Intervention\\Module\\RemoveDashboardItems' => __DIR__ . '/..' . '/soberwp/intervention/src/Module/RemoveDashboardItems.php',
+        'Sober\\Intervention\\Module\\RemoveEmoji' => __DIR__ . '/..' . '/soberwp/intervention/src/Module/RemoveEmoji.php',
+        'Sober\\Intervention\\Module\\RemoveHelpTabs' => __DIR__ . '/..' . '/soberwp/intervention/src/Module/RemoveHelpTabs.php',
+        'Sober\\Intervention\\Module\\RemoveHowdy' => __DIR__ . '/..' . '/soberwp/intervention/src/Module/RemoveHowdy.php',
+        'Sober\\Intervention\\Module\\RemoveMenuItems' => __DIR__ . '/..' . '/soberwp/intervention/src/Module/RemoveMenuItems.php',
+        'Sober\\Intervention\\Module\\RemovePageComponents' => __DIR__ . '/..' . '/soberwp/intervention/src/Module/RemovePageComponents.php',
+        'Sober\\Intervention\\Module\\RemovePostComponents' => __DIR__ . '/..' . '/soberwp/intervention/src/Module/RemovePostComponents.php',
+        'Sober\\Intervention\\Module\\RemoveTaxonomies' => __DIR__ . '/..' . '/soberwp/intervention/src/Module/RemoveTaxonomies.php',
+        'Sober\\Intervention\\Module\\RemoveToolbarFrontend' => __DIR__ . '/..' . '/soberwp/intervention/src/Module/RemoveToolbarFrontend.php',
+        'Sober\\Intervention\\Module\\RemoveToolbarItems' => __DIR__ . '/..' . '/soberwp/intervention/src/Module/RemoveToolbarItems.php',
+        'Sober\\Intervention\\Module\\RemoveUpdateNotices' => __DIR__ . '/..' . '/soberwp/intervention/src/Module/RemoveUpdateNotices.php',
+        'Sober\\Intervention\\Module\\RemoveUserFields' => __DIR__ . '/..' . '/soberwp/intervention/src/Module/RemoveUserFields.php',
+        'Sober\\Intervention\\Module\\RemoveUserRoles' => __DIR__ . '/..' . '/soberwp/intervention/src/Module/RemoveUserRoles.php',
+        'Sober\\Intervention\\Module\\RemoveWidgets' => __DIR__ . '/..' . '/soberwp/intervention/src/Module/RemoveWidgets.php',
+        'Sober\\Intervention\\Module\\UpdateDashboardColumns' => __DIR__ . '/..' . '/soberwp/intervention/src/Module/UpdateDashboardColumns.php',
+        'Sober\\Intervention\\Module\\UpdateLabelFooter' => __DIR__ . '/..' . '/soberwp/intervention/src/Module/UpdateLabelFooter.php',
+        'Sober\\Intervention\\Module\\UpdateLabelPage' => __DIR__ . '/..' . '/soberwp/intervention/src/Module/UpdateLabelPage.php',
+        'Sober\\Intervention\\Module\\UpdateLabelPost' => __DIR__ . '/..' . '/soberwp/intervention/src/Module/UpdateLabelPost.php',
+        'Sober\\Intervention\\Module\\UpdatePagination' => __DIR__ . '/..' . '/soberwp/intervention/src/Module/UpdatePagination.php',
+        'Sober\\Intervention\\Utils' => __DIR__ . '/..' . '/soberwp/intervention/src/Utils.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitabdf7edbed11382bd9e996de46de03e4::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitabdf7edbed11382bd9e996de46de03e4::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitabdf7edbed11382bd9e996de46de03e4::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit399ec3ff124b77248666d683de790f57::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit399ec3ff124b77248666d683de790f57::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit399ec3ff124b77248666d683de790f57::$classMap;
 
         }, null, ClassLoader::class);
     }

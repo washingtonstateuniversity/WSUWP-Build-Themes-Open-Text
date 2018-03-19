@@ -1,7 +1,26 @@
+////
+/// @group elements
+////
+
 //============================================================================//
 //                                   Links                                    //
 //============================================================================//
 
-a {
-  text-decoration: $link-text-decoration;
+@import "../utilities";
+
+@if $type != 'web' {
+  a {
+    text-decoration: if-map-get($link-text-decoration, $type);
+  }
+}
+
+@else {
+  .front-matter,
+  .part,
+  .chapter,
+  .back-matter {
+    a {
+      text-decoration: if-map-get($link-text-decoration, $type);
+    }
+  }
 }
