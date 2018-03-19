@@ -1,0 +1,42 @@
+{
+	"name": "pressbooks/pressbooks-aldine",
+	"type": "wordpress-theme",
+	"license": "GPL-3.0-or-later",
+	"description":
+		"Aldine is the default theme for the home page of Pressbooks networks. It is named for the Aldine Press, founded by Aldus Manutius in 1494, who is regarded by many as the world’s first publisher.",
+	"homepage": "https://github.com/pressbooks/pressbooks-aldine/",
+	"authors": [
+		{
+			"name": "Pressbooks (Book Oven Inc.)",
+			"email": "code@pressbooks.com",
+			"homepage": "https://pressbooks.org"
+		}
+	],
+	"keywords": ["publishing", "catalog", "pressbooks", "default-theme"],
+	"support": {
+		"issues": "https://github.com/pressbooks/pressbooks-aldine/issues",
+		"forum": "https://discourse.pressbooks.org/"
+	},
+	"require": {
+		"php": ">=7",
+		"composer/installers": "~1.0",
+		"pressbooks/mix": "^2.1",
+		"soberwp/intervention": "1.2.0-p",
+		"spatie/color": "^1.1"
+	},
+	"require-dev": {
+		"humanmade/coding-standards": "^0.2.1",
+		"squizlabs/php_codesniffer": "^2.8.0",
+		"wpreadme2markdown/wp2md": "^3.0"
+	},
+	"scripts": {
+		"test": ["@standards"],
+		"standards": [
+			"vendor/bin/phpcs --standard=phpcs.ruleset.xml inc partials *.php"
+		],
+		"localize": [
+			"wp-pot -o=languages/pressbooks-aldine.pot -d=pressbooks-aldine -t 'Pressbooks (Book Oven Inc.) <code@pressbooks.com>' -s '**/*.php'"
+		],
+		"readme": ["vendor/bin/wp2md -i readme.txt -o README.md"]
+	}
+}
