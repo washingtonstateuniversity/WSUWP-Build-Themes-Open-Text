@@ -2,14 +2,14 @@
 
 [![Packagist](https://img.shields.io/packagist/l/pressbooks/pressbooks-clarke.svg)](https://packagist.org/packages/pressbooks/pressbooks-clarke) [![Packagist](https://img.shields.io/packagist/v/pressbooks/pressbooks-clarke.svg)](https://packagist.org/packages/pressbooks/pressbooks-clarke)
 
-Named after Arthur C. Clarke, this is a simple book theme, with some light modern touches. Good for fiction and non-fiction. Body font is Times New Roman; headers Helvetica.
+Named after Arthur C. Clarke, this is a simple book theme, with some light modern touches. Good for fiction and non-fiction. Body font is Tinos; headers Lato.
 
 ## Requirements
 
-* PHP >= 5.6
-* WordPress >= 4.8.0
-* Pressbooks >= 4.0.
-* Pressbooks Book >= 1.7.0
+* PHP >= 7.0
+* WordPress >= 4.9.4
+* Pressbooks >= 5.0.0
+* Pressbooks Book >= 2.0.0
 
 ## Installation
 
