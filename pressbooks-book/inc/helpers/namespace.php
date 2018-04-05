@@ -2,8 +2,7 @@
 
 namespace Pressbooks\Book\Helpers;
 
-function toc_sections( $sections, $post_type, $can_read, $can_read_private, $permissive_private_content, $should_parse_subsections ) {
-	global $blog_id;
+function toc_sections( $sections, $post_type, $can_read, $can_read_private, $permissive_private_content ) {
 	foreach ( $sections as $section ) {
 		if ( ! in_array( $section['post_status'], [ 'publish', 'web-only' ], true ) ) {
 			if ( ! $can_read_private ) {
@@ -16,30 +15,30 @@ function toc_sections( $sections, $post_type, $can_read, $can_read_private, $per
 				}
 			}
 		} ?>
-		<li class="toc__<?php echo $post_type; ?> <?php echo pb_get_section_type( get_post( $section['ID'] ) ) ?>">
-			<?php if ( $post_type !== 'chapter' ) {?>
+		<li id="<?php echo "toc-{$post_type}-{$section['ID']}"; ?>" class="toc__<?php echo $post_type; ?> <?php echo pb_get_section_type( get_post( $section['ID'] ) ) ?>">
+			<?php if ( $post_type !== 'chapter' ) { ?>
 			<div class="inner-content">
-			<?php } ?>
+				<?php } ?>
 				<a class="toc__chapter-title" href="<?php echo get_permalink( $section['ID'] ); ?>">
-					<?php $chapter_number = pb_get_chapter_number( $section['post_name'] );
+					<?php $chapter_number = pb_get_chapter_number( $section['ID'] );
 					if ( $chapter_number ) {
 						echo "<span>$chapter_number.&nbsp;</span>";
 					}
-					echo pb_strip_br( $section['post_title'] );?>
+					echo pb_strip_br( $section['post_title'] ); ?>
 				</a>
-				<?php if ( $should_parse_subsections ) {
+				<?php if ( pb_should_parse_subsections() ) {
 					$subsections = pb_get_subsections( $section['ID'] );
 					if ( $subsections ) { ?>
 						<ol class="toc__subsections">
-						<?php foreach ( $subsections as $id => $name ) { ?>
-							<li class="toc__subsection"><a href="<?php echo get_permalink( $section['ID'] ); ?>#<?php echo $id; ?>"><?php echo $name; ?></a></li>
-						<?php } ?>
+							<?php foreach ( $subsections as $id => $name ) { ?>
+								<li class="toc__subsection"><a href="<?php echo get_permalink( $section['ID'] ); ?>#<?php echo $id; ?>"><?php echo $name; ?></a></li>
+							<?php } ?>
 						</ol>
 					<?php }
 }
 if ( $post_type !== 'chapter' ) { ?>
-				</div>
-			<?php } ?>
+			</div>
+		<?php } ?>
 		</li>
 	<?php }
 }
@@ -127,18 +126,20 @@ function display_menu() {
 	$items = sprintf(
 		'<li><a href="%1$s">%2$s</a></li>',
 		( is_front_page() ) ? '#main' : get_home_url(),
-		__( 'Home', 'pressbooks-aldine' )
+		__( 'Home', 'pressbooks-book' )
 	);
-	$items .= sprintf(
-		'<li><a href="%1$s">%2$s</a></li>',
-		( get_permalink() === pb_get_first() ) ? '#main' : pb_get_first(),
-		__( 'Read', 'pressbooks-aldine' )
-	);
+	if ( pb_get_first_post_id() ) {
+		$items .= sprintf(
+			'<li><a href="%1$s">%2$s</a></li>',
+			pb_get_first(),
+			__( 'Read', 'pressbooks-book' )
+		);
+	}
 	if ( array_filter( get_option( 'pressbooks_ecommerce_links', [] ) ) ) {
 		$items .= sprintf(
 			'<li><a href="%1$s">%2$s</a></li>',
 			( get_page_link() === home_url( '/buy/' ) ) ? '#main' : home_url( '/buy/' ),
-			__( 'Buy', 'pressbooks-aldine' )
+			__( 'Buy', 'pressbooks-book' )
 		);
 	}
 	if ( ! is_user_logged_in() ) {

@@ -62,20 +62,20 @@ add_filter( 'show_admin_bar', function () { // @codingStandardsIgnoreLine
  */
 global $metakeys;
 $metakeys = [
-	'pb_authors' => __( 'Authors', 'pressbooks-book' ),
-	'pb_editors' => __( 'Editors', 'pressbooks-book' ),
-	'pb_translators' => __( 'Translators', 'pressbooks-book' ),
-	'pb_reviewers' => __( 'Reviewers', 'pressbooks-book' ),
-	'pb_illustrators' => __( 'Illustrators', 'pressbooks-book' ),
-	'pb_contributors' => __( 'Contributors', 'pressbooks-book' ),
+	'pb_authors' => _n_noop( 'Author', 'Authors', 'pressbooks-book' ),
+	'pb_editors' => _n_noop( 'Editor', 'Editors', 'pressbooks-book' ),
+	'pb_translators' => _n_noop( 'Translator', 'Translators', 'pressbooks-book' ),
+	'pb_reviewers' => _n_noop( 'Reviewer', 'Reviewers', 'pressbooks-book' ),
+	'pb_illustrators' => _n_noop( 'Illustrator', 'Illustrators', 'pressbooks-book' ),
+	'pb_contributors' => _n_noop( 'Contributor', 'Contributors', 'pressbooks-book' ),
 	'pb_book_license' => __( 'License', 'pressbooks-book' ),
-	'pb_primary_subject'  => __( 'Primary Subject', 'pressbooks-book' ),
-	'pb_additional_subjects'  => __( 'Additional Subject(s)', 'pressbooks-book' ),
-	'pb_publisher'  => __( 'Publisher', 'pressbooks-book' ),
-	'pb_publication_date'  => __( 'Publication Date', 'pressbooks-book' ),
-	'pb_ebook_isbn'  => __( 'Ebook ISBN', 'pressbooks-book' ),
-	'pb_print_isbn'  => __( 'Print ISBN', 'pressbooks-book' ),
-	'pb_hashtag'  => __( 'Hashtag', 'pressbooks-book' ),
+	'pb_primary_subject' => __( 'Primary Subject', 'pressbooks-book' ),
+	'pb_additional_subjects' => __( 'Additional Subject(s)', 'pressbooks-book' ),
+	'pb_publisher' => __( 'Publisher', 'pressbooks-book' ),
+	'pb_publication_date' => __( 'Publication Date', 'pressbooks-book' ),
+	'pb_ebook_isbn' => __( 'Ebook ISBN', 'pressbooks-book' ),
+	'pb_print_isbn' => __( 'Print ISBN', 'pressbooks-book' ),
+	'pb_hashtag' => __( 'Hashtag', 'pressbooks-book' ),
 ];
 
 /* ------------------------------------------------------------------------ *
@@ -130,6 +130,10 @@ function pb_enqueue_assets() {
 			wp_enqueue_style( 'pressbooks/theme', $sass->urlToUserGeneratedCss() . '/style.css', false, @filemtime( $fullpath ), 'screen, print' ); // @codingStandardsIgnoreLine
 		} else {
 			$styles = Container::get( 'Styles' );
+			if ( $styles->isCurrentThemeCompatible( 1 ) ) {
+				// Supplementary webbook styles for older themes.
+				wp_enqueue_style( 'pressbooks/web-house-style', $assets->getPath( 'styles/web-house-style.css' ), false, null );
+			}
 			if ( $styles->isCurrentThemeCompatible( 1 ) || $styles->isCurrentThemeCompatible( 2 ) ) {
 				$sass = Container::get( 'Sass' );
 				// Custom Styles
@@ -486,4 +490,16 @@ function pb_use_htmlbook() {
 	return false;
 }
 
+/**
+ * Count authors in an oxford comma delimited string
+ *
+ * @param string $var
+ *
+ * @return int
+ */
+function pb_count_authors( $var ) {
+	return count( \Pressbooks\Utility\oxford_comma_explode( $var ) );
+}
+
+// Prepends "Private: " to the titles of draft posts.
 add_filter( 'the_title', 'Pressbooks\Book\Filters\add_private_to_title', 10, 2 );
