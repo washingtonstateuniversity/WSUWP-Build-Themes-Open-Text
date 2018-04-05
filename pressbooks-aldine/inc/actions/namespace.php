@@ -248,8 +248,11 @@ function add_color_variants( $option, $old_value, $value ) {
 		$color->green() * 0.9,
 		$color->blue() * 0.9
 	);
-	update_option( $option . '_dark', (string) $color_dark );
-	update_option( $option . '_alpha', (string) $color_alpha );
+	$color_alpha = (string) $color_alpha;
+	$color_dark = (string) $color_dark;
+
+	update_option( $option . '_dark', $color_dark );
+	update_option( $option . '_alpha', $color_alpha );
 }
 
 /**
@@ -290,7 +293,7 @@ function tinymce_l18n() {
 			call_to_action: {
 				'title': '<?php _e( 'Call to Action', 'pressbooks-aldine' ); ?>',
 				'text': '<?php _e( 'Text', 'pressbooks-aldine' ); ?>',
-				'url': '<?php _e( 'URL', 'pressbooks-aldine' ); ?>'
+				'link': '<?php _e( 'Link', 'pressbooks-aldine' ); ?>'
 			}
 		};
 	</script>

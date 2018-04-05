@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitf82ac4bb5a0c80ac2a60e8815d1a76da
+class ComposerStaticInitb97729f16d5e48366144d4c6e380d0b4
 {
     public static $files = array (
         'f61431ae35714ebe66a223a5c374b5e5' => __DIR__ . '/..' . '/soberwp/intervention/intervention.php',
@@ -182,9 +182,9 @@ class ComposerStaticInitf82ac4bb5a0c80ac2a60e8815d1a76da
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitf82ac4bb5a0c80ac2a60e8815d1a76da::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitf82ac4bb5a0c80ac2a60e8815d1a76da::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitf82ac4bb5a0c80ac2a60e8815d1a76da::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitb97729f16d5e48366144d4c6e380d0b4::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitb97729f16d5e48366144d4c6e380d0b4::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitb97729f16d5e48366144d4c6e380d0b4::$classMap;
 
         }, null, ClassLoader::class);
     }
